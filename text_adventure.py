@@ -47,7 +47,7 @@ def backstory():
     evaporated from the newstream before it the eyes of a single person, and thus my arrest was swift yet quiet.""")
     cont()
 
-def escape():
+def escape_decide():
     print("""That Brings me to today, sitting on cold steel grating, half starving, half beaten. I am going to die
     in here. I'll starve. I'll disappear when the slavers don't think I'm productive enough. I'll be dropped into
     the void of space with no more than my brittle bones and searing hatred.""")
@@ -63,21 +63,30 @@ def escape():
     while ans == True:
         c1 = input("Should I 'Escape' or should I 'Stay?'\n\t>>>")
         if c1.lower() == "escape" or c1.lower() == "leave":
-            escape.bgc = "escape"
+            escape_decide.bgc = "escape"
             cls()
             ans = False
         elif c1.lower() == "stay":
-            escape.bgc = 'stay'
+            escape_decide.bgc = 'stay'
             cls()
             ans = False
         else:
             cls()
             print("This is important, I need to say it. 'Escape' or 'Stay'?")
 
+def escaping():
+    print("""Its decided then. Its time to escape. I pull my decrepid body to its feet and nearly double over 
+    with nausia, but stood straight and managed to keep what little bile I had down. I looked around me for 
+    something that may provide usefull to my ventures, deciding the vastness of nothing wouldn't help much.
+    I pressed my body to the cell bars, basking in the cool dark air outside in the block. It's probably around
+    midnight judging by the guard rotation""")
+
+
+
 introduction()
 backstory()
-escape()
-if escape.bgc == 'escape':
-    print('you escape debug')
-elif escape.bgc == 'stay':
+escape_decide()
+if escape_decide.bgc == 'escape':
+    escaping()
+elif escape_decide.bgc == 'stay':
     print('you stay and die debug')
